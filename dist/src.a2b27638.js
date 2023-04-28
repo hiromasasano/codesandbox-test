@@ -188,11 +188,27 @@ var onClickAdd = function onClickAdd() {
   var li = document.createElement("li");
   li.innerText = inputText;
 
+  // button(完了)タグ生成
+  var completeButton = document.createElement("button");
+  completeButton.innerText = "完了";
+  completeButton.addEventListener("click", function () {
+    alert("完了");
+  });
+
+  // button(削除)タグ生成
+  var deleteButton = document.createElement("button");
+  deleteButton.innerText = "削除";
+  deleteButton.addEventListener("click", function () {
+    // 押された削除ボタンの親タグ(div)を未完了リストから削除
+  });
+
   // divタグの子要素に各要素を設定
   div.appendChild(li);
+  div.appendChild(completeButton);
+  div.appendChild(deleteButton);
 
   // 未完了リストに追加
-  document.getElementById("incomplete-list");
+  document.getElementById("incomplete-list").appendChild(div);
 };
 document.getElementById("add-button").addEventListener("click", function () {
   return onClickAdd();
@@ -222,7 +238,7 @@ var parent = module.bundle.parent;
 if ((!parent || !parent.isParcelRequire) && typeof WebSocket !== 'undefined') {
   var hostname = "" || location.hostname;
   var protocol = location.protocol === 'https:' ? 'wss' : 'ws';
-  var ws = new WebSocket(protocol + '://' + hostname + ':' + "43891" + '/');
+  var ws = new WebSocket(protocol + '://' + hostname + ':' + "41313" + '/');
   ws.onmessage = function (event) {
     checkedAssets = {};
     assetsToAccept = [];
